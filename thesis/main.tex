@@ -62,7 +62,7 @@
 
 \section{实验内容及原理}
 
-\subsection{模电部分}
+\subsection{模拟电路部分}
 
 \subsubsection{温度传感器}
 温度传感器有多种，本实验采用半导体的PN 结作为温度传感器，在一定范围内
@@ -148,13 +148,36 @@ $u_I$的0~5V映射至频率区间0~10kHz。其中，双向稳压管由两个单�
 开发板的输入电平。电路实现如图（6）所示。
 \begin{figure}[H]
   \centering
-  \includegraphics[width=7cm]{pic/2.1.6.png}
+  \includegraphics[width=6cm]{pic/2.1.6.png}
   \caption{3.3V 电平转换电路}
 \end{figure}
 
-\subsubsection{模拟部分总结}
+\subsubsection{模拟电路部分总结}
 模拟部分实现将温度信号进行调理放大，变换为频率信号，最终以3.3V 的频率信号（0-10kHz）输
 出，频率的大小与温度成正比。
+
+\subsection{数字电路部分}
+
+\subsubsection{FPGA实验内容}
+在 FPGA 开发板 EGO 上设计一个测量 100KHz 以内的频率计， 通过 FPGA 自行产生频率在上述范围内
+可调的方波信号， 通过自行设计的频率测量模块得到输入脉冲频率， 使用数码管显示其频率或周期，如
+下图所示
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=3.4cm]{pic/2.2.1.png}
+  \caption{数字部分实现方案}
+\end{figure}
+EGO 板上为用户提供了灵活的通用接口（J5）用来作 I/O 扩展，共提供 32 个双向 IO，
+每个 IO 支持过流过压保护。可以选择其中两个管脚作为频率计的输入及测试时钟信号的
+输出。
+
+\subsubsection{代码思路}
+
+
+\section{实验过程}
+\subsection{电路仿真与参数设计}
+\subsubsection{恒流源与PN结}
 
 \end{document}
 
